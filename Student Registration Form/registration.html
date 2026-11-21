@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaf2ff;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .form-box {
+            width: 450px;
+            max-width: 100%;
+            margin: auto;
+            padding: 25px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1f3864;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+        label::before {
+            content: "* ";
+            color: red;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border: 2px solid blue;
+            outline: none;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: auto;
+        }
+
+        .choice {
+            display: inline-block;
+            margin-right: 15px;
+            font-weight: normal;
+        }
+
+        .choice::before {
+            content: "";
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background-color: #1f3864;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: green;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="form-box">
+        <h1>Student Registration</h1>
+
+        <p>Enter your details to register.</p>
+
+        <form action="#" method="post">
+
+            <label for="name">Full Name</label>
+            <input type="text" id="name"
+                   placeholder="Enter your name"
+                   required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email"
+                   placeholder="Enter your email"
+                   required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password"
+                   placeholder="Enter password"
+                   required minlength="8">
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone"
+                   placeholder="Enter phone number"
+                   required>
+
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" required>
+
+            <label>Gender</label>
+
+            <label class="choice">
+                <input type="radio" name="gender"
+                       value="Male" required>
+                Male
+            </label>
+
+            <label class="choice">
+                <input type="radio" name="gender"
+                       value="Female">
+                Female
+            </label>
+
+            <label class="choice">
+                <input type="radio" name="gender"
+                       value="Other">
+                Other
+            </label>
+
+            <label for="course">Select Course</label>
+
+            <select id="course" required>
+                <option value="">Choose Course</option>
+                <option>AI and Data Science</option>
+                <option>Computer Engineering</option>
+                <option>Information Technology</option>
+                <option>Electronics Engineering</option>
+            </select>
+
+            <label>Hobbies</label>
+
+            <label class="choice">
+                <input type="checkbox" value="Reading">
+                Reading
+            </label>
+
+            <label class="choice">
+                <input type="checkbox" value="Sports">
+                Sports
+            </label>
+
+            <label class="choice">
+                <input type="checkbox" value="Music">
+                Music
+            </label>
+
+            <label for="address">Address</label>
+            <textarea id="address"
+                      rows="3"
+                      placeholder="Enter your address"></textarea>
+
+            <button type="submit">
+                Register
+            </button>
+        </form>
+    </div>
+</body>
+</html>

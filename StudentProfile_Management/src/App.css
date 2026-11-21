@@ -1,0 +1,61 @@
+.container {
+  width: 70%;
+  margin: 40px auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: navy;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 25px auto;
+}
+
+input {
+  padding: 12px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px;
+  background-color: navy;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: darkblue;
+}
+
+.student-card {
+  background-color: #f0f4ff;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.student-card h3 {
+  color: darkgreen;
+}
+
+.student-card button {
+  margin-right: 8px;
+  background-color: gray;
+}
+
+.student-card button:last-child {
+  background-color: crimson;
+}
+
+.student-card button:hover {
+  opacity: 0.9;
+}

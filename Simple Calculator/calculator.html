@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: lightblue;
+        }
+
+        .calculator {
+            width: 300px;
+            margin: 80px auto;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 8px;
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        #result {
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <h2>Simple Calculator</h2>
+
+        <input type="number" id="num1" placeholder="Enter first number">
+        <input type="number" id="num2" placeholder="Enter second number">
+
+        <br>
+
+        <button onclick="calculate('add')">+</button>
+        <button onclick="calculate('subtract')">-</button>
+        <button onclick="calculate('multiply')">*</button>
+        <button onclick="calculate('divide')">/</button>
+
+        <h3 id="result">Result: </h3>
+    </div>
+
+    <script>
+        function calculate(operation) {
+
+            let a = document.getElementById("num1").value;
+            let b = document.getElementById("num2").value;
+
+            if (a === "" || b === "") {
+                document.getElementById("result").innerHTML =
+                    "Please enter both numbers.";
+                return;
+            }
+
+            a = Number(a);
+            b = Number(b);
+
+            let answer;
+
+            if (operation === "add") {
+                answer = a + b;
+            }
+            else if (operation === "subtract") {
+                answer = a - b;
+            }
+            else if (operation === "multiply") {
+                answer = a * b;
+            }
+            else if (operation === "divide") {
+                if (b === 0) {
+                    document.getElementById("result").innerHTML =
+                        "Cannot divide by zero.";
+                    return;
+                }
+                answer = a / b;
+            }
+
+            document.getElementById("result").innerHTML =
+                "Result: " + answer;
+        }
+    </script>
+</body>
+</html>

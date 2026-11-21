@@ -1,0 +1,30 @@
+.container {
+  text-align: center;
+  margin: 80px auto;
+  padding: 30px;
+  width: 70%;
+  background-color: #f0f4ff;
+  border-radius: 12px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: navy;
+}
+
+h2 {
+  color: darkgreen;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: navy;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: darkblue;
+}

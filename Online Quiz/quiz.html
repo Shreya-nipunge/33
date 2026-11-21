@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Quiz</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            padding: 30px;
+        }
+
+        .container {
+            background: white;
+            width: 500px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: navy;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: navy;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: blue;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Online Quiz</h1>
+
+        <form id="quizForm">
+
+            <div class="question">
+                <p>1. Which language is used to create web pages?</p>
+
+                <input type="radio" name="q1" value="HTML"> HTML<br>
+                <input type="radio" name="q1" value="Python"> Python<br>
+                <input type="radio" name="q1" value="Java"> Java
+            </div>
+
+            <div class="question">
+                <p>2. Which language is used for styling web pages?</p>
+
+                <input type="radio" name="q2" value="CSS"> CSS<br>
+                <input type="radio" name="q2" value="C"> C<br>
+                <input type="radio" name="q2" value="SQL"> SQL
+            </div>
+
+            <div class="question">
+                <p>3. Which language makes web pages interactive?</p>
+
+                <input type="radio" name="q3" value="JavaScript"> JavaScript<br>
+                <input type="radio" name="q3" value="HTML"> HTML<br>
+                <input type="radio" name="q3" value="CSS"> CSS
+            </div>
+
+            <div class="question">
+                <p>4. Which tag is used to create a hyperlink?</p>
+
+                <input type="radio" name="q4" value="a"> &lt;a&gt;<br>
+                <input type="radio" name="q4" value="p"> &lt;p&gt;<br>
+                <input type="radio" name="q4" value="h1"> &lt;h1&gt;
+            </div>
+
+            <div class="question">
+                <p>5. Which method displays an alert box?</p>
+
+                <input type="radio" name="q5" value="alert()"> alert()<br>
+                <input type="radio" name="q5" value="print()"> print()<br>
+                <input type="radio" name="q5" value="write()"> write()
+            </div>
+
+            <button type="button" onclick="submitQuiz()">
+                Submit Quiz
+            </button>
+
+        </form>
+
+        <div id="result"></div>
+
+    </div>
+
+    <script>
+        function submitQuiz() {
+
+            let answers = {
+                q1: "HTML",
+                q2: "CSS",
+                q3: "JavaScript",
+                q4: "a",
+                q5: "alert()"
+            };
+
+            let score = 0;
+
+            for (let question in answers) {
+
+                let selected = document.querySelector(
+                    'input[name="' + question + '"]:checked'
+                );
+
+                if (selected && selected.value === answers[question]) {
+                    score++;
+                }
+
+            }
+
+            document.getElementById("result").innerHTML =
+                "Your Score: " + score + " / 5";
+
+        }
+    </script>
+</body>
+</html>
